@@ -1,0 +1,18 @@
+# ninja log v5
+1903	2246	1716887160886947264	shopping_list	2030fb98ce7127cd
+1	41	1716888650901735952	build.ninja	9b1ab9e2495a9c35
+2	1188	1716888656672482503	CMakeFiles/shopping_delete.dir/service.cpp.o	5c6333c9233e38d0
+1	1929	1716888657413449929	CMakeFiles/shopping_delete.dir/main.cpp.o	528852f818b9c18
+2	2260	1716888657744435377	CMakeFiles/shopping_delete.dir/gui.cpp.o	bef43d10d4a3fb7e
+2	516	1716888675376658194	CMakeFiles/shopping_delete.dir/repository.cpp.o	ff1a5fb1c5e89efb
+516	850	1716888675708643527	shopping_delete	9316986a5b74f949
+3	1790	1716889068761192468	CMakeFiles/shopping_delete.dir/main.cpp.o	528852f818b9c18
+3	1829	1716889068800192333	CMakeFiles/shopping_delete.dir/gui.cpp.o	bef43d10d4a3fb7e
+1829	2176	1716889069144191129	shopping_delete	9316986a5b74f949
+1	1868	1716889202111938372	CMakeFiles/shopping_delete.dir/gui.cpp.o	bef43d10d4a3fb7e
+1868	2217	1716889202458933373	shopping_delete	9316986a5b74f949
+4	1835	1716889255641085333	CMakeFiles/shopping_delete.dir/gui.cpp.o	bef43d10d4a3fb7e
+1835	2174	1716889255977079494	shopping_delete	9316986a5b74f949
+2	1827	1716889523506113922	CMakeFiles/shopping_delete.dir/main.cpp.o	528852f818b9c18
+3	1843	1716889523523113484	CMakeFiles/shopping_delete.dir/gui.cpp.o	bef43d10d4a3fb7e
+1843	2180	1716889523857104880	shopping_delete	9316986a5b74f949

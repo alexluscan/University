@@ -1,0 +1,6 @@
+# ninja log v5
+1	514	1716887144259206509	CMakeFiles/shopping_list.dir/repository.cpp.o	ba806cddef689bd4
+2	780	1716887144525186373	CMakeFiles/shopping_list.dir/service.cpp.o	e8d64705ea506b78
+2	1864	1716887160506976050	CMakeFiles/shopping_list.dir/gui.cpp.o	d0c12138e5144dc
+1	1903	1716887160546973020	CMakeFiles/shopping_list.dir/main.cpp.o	bb82b64a20e3fd02
+1903	2246	1716887160886947264	shopping_list	2030fb98ce7127cd

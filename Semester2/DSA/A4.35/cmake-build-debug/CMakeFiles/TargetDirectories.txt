@@ -1,0 +1,3 @@
+/home/alexlsk/University/Semester2/DSA/A4.35/cmake-build-debug/CMakeFiles/A4_35.dir
+/home/alexlsk/University/Semester2/DSA/A4.35/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alexlsk/University/Semester2/DSA/A4.35/cmake-build-debug/CMakeFiles/rebuild_cache.dir
