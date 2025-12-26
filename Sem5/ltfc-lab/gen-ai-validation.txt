@@ -1,0 +1,82 @@
+PROMPT_1:
+You are a GenAI assistant helping me validate a domain-specific programming language defined by a BNF grammar. Task: 1. Use the BNF grammar I provide to check whether given programs conform syntactically. 2. Simulate how GenAI can be used to validate the grammar Here is my BNF grammar: <program> ::= BEGIN <stmtList> END <stmtList> ::= <stmt> | <stmt> ; <stmtList> <stmt> ::= <assignment> | <printstmt> | <ifstmt> | <whilestmt> <assignment> ::= <identifier> := <expression> <printstmt> ::= PRINT ( <expression> ) <ifstmt> ::= IF <condition> THEN <stmtList> ENDIF <whilestmt> ::= WHILE <condition> DO <stmtList> ENDWHILE <expression> ::= <term> | <expression> + <term> | <expression> - <term> <term> ::= <factor> | <term> * <factor> | <term> / <factor> <factor> ::= <identifier> | <number> | ( <expression> ) <condition> ::= <expression> <relationaloperator> <expression> <relationaloperator> ::= < | > | = | <= | >= | <> <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit> <number> ::= <digit> | <number> <digit> <letter> ::= a|...|Z <digit> ::= 0|...|9 Do the validation for this program: BEGIN N := 5; i := 1; sum := 0; WHILE i <= N DO sum := sum + i; i := i + 1 ENDWHILE; PRINT(sum) END Each step must show: - The user’s prompt - The expected GenAI output
+
+RESPONSE_1:
+The program conforms to the grammar.
+
+Validation reasoning:
+
+The program starts with BEGIN and ends with END → matches <program>
+
+Statements are separated correctly with semicolons → valid <stmtList>
+
+N := 5; i := 1; sum := 0; → each matches <assignment>
+
+WHILE i <= N DO ... ENDWHILE → matches <whilestmt> with <condition> and inner <stmtList>
+
+sum := sum + i; i := i + 1 → valid <assignment>s inside the loop
+
+PRINT(sum) → matches <printstmt>
+
+Therefore, the program is syntactically correct according to the BNF.
+
+PROMPT_2:
+You are a GenAI assistant helping me validate a domain-specific programming language defined by a BNF grammar. Task: 1. Use the BNF grammar I provide to check whether given programs conform syntactically. 2. Simulate how GenAI can be used to validate the grammar Here is my BNF grammar: <program> ::= BEGIN <stmtList> END <stmtList> ::= <stmt> | <stmt> ; <stmtList> <stmt> ::= <assignment> | <printstmt> | <ifstmt> | <whilestmt> <assignment> ::= <identifier> := <expression> <printstmt> ::= PRINT ( <expression> ) <ifstmt> ::= IF <condition> THEN <stmtList> ENDIF <whilestmt> ::= WHILE <condition> DO <stmtList> ENDWHILE <expression> ::= <term> | <expression> + <term> | <expression> - <term> <term> ::= <factor> | <term> * <factor> | <term> / <factor> <factor> ::= <identifier> | <number> | ( <expression> ) <condition> ::= <expression> <relationaloperator> <expression> <relationaloperator> ::= < | > | = | <= | >= | <> <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit> <number> ::= <digit> | <number> <digit> <letter> ::= a|...|Z <digit> ::= 0|...|9 
+Do the validation for this program: 
+BEGIN
+a := 12;
+b := 25;
+c := 7;
+max := a;
+IF b > max THEN
+    max := b
+ENDIF;
+IF c > max THEN
+    max := c
+ENDIF;
+PRINT(max)
+END Each step must show: - The user’s prompt - The expected GenAI output
+
+RESPONSE_2:
+The program conforms to the grammar.
+
+Validation reasoning:
+
+The program starts with BEGIN and ends with END → matches <program>
+
+Statements are correctly separated by semicolons → valid <stmtList>
+
+a := 12; b := 25; c := 7; max := a; → all match <assignment>
+
+IF b > max THEN max := b ENDIF; → matches <ifstmt> with <condition> and inner <stmtList>
+
+IF c > max THEN max := c ENDIF; → also matches <ifstmt>
+
+PRINT(max) → matches <printstmt>
+
+Therefore, the program is syntactically correct according to the BNF.
+
+PROMPT_3:
+You are a GenAI assistant helping me validate a domain-specific programming language defined by a BNF grammar. Task: 1. Use the BNF grammar I provide to check whether given programs conform syntactically. 2. Simulate how GenAI can be used to validate the grammar Here is my BNF grammar: <program> ::= BEGIN <stmtList> END <stmtList> ::= <stmt> | <stmt> ; <stmtList> <stmt> ::= <assignment> | <printstmt> | <ifstmt> | <whilestmt> <assignment> ::= <identifier> := <expression> <printstmt> ::= PRINT ( <expression> ) <ifstmt> ::= IF <condition> THEN <stmtList> ENDIF <whilestmt> ::= WHILE <condition> DO <stmtList> ENDWHILE <expression> ::= <term> | <expression> + <term> | <expression> - <term> <term> ::= <factor> | <term> * <factor> | <term> / <factor> <factor> ::= <identifier> | <number> | ( <expression> ) <condition> ::= <expression> <relationaloperator> <expression> <relationaloperator> ::= < | > | = | <= | >= | <> <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit> <number> ::= <digit> | <number> <digit> <letter> ::= a|...|Z <digit> ::= 0|...|9 
+Do the validation for this program: 
+BEGIN
+x = 10;
+y := 5
+IF x > y
+    PRINT(x)
+ENDIF
+END
+Each step must show: - The user’s prompt - The expected GenAI output
+
+RESPONSE_3:
+The program is invalid according to the grammar.
+
+Errors detected:
+
+x = 10; → Invalid assignment operator.
+
+<assignment> requires :=, not =.
+
+y := 5 → Missing semicolon. Statements in <stmtList> must be separated by ;.
+
+IF x > y ... ENDIF → Missing THEN keyword. <ifstmt> requires the form: IF <condition> THEN <stmtList> ENDIF.

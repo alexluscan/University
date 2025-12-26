@@ -1,0 +1,9 @@
+Start: Q0
+Productions:
+Q0 -> a Q1
+Q0 -> b Q1
+Q0 -> z Q1
+Q1 -> a Q1
+Q1 -> b Q1
+Q1 -> z Q1
+Q1 -> ε

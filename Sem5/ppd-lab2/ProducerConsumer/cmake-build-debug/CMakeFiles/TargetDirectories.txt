@@ -1,0 +1,3 @@
+/Users/alexlsk/Univeristy/ppd-lab2/ProducerConsumer/cmake-build-debug/CMakeFiles/ProducerConsumer.dir
+/Users/alexlsk/Univeristy/ppd-lab2/ProducerConsumer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alexlsk/Univeristy/ppd-lab2/ProducerConsumer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

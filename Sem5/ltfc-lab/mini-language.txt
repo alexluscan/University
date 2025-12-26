@@ -1,0 +1,24 @@
+Math Computation — BNF
+
+
+<program> ::= BEGIN <stmtList> END
+
+<stmtList> ::= <stmt> | <stmt> ; <stmtList>
+
+<stmt> ::= <assignment> | <printstmt> | <ifstmt> | <whilestmt>
+<assignment> ::= <identifier> := <expression>
+<printstmt> ::= PRINT ( <expression> )
+<ifstmt> ::= IF <condition> THEN <stmtList> ENDIF
+<whilestmt> ::= WHILE <condition> DO <stmtList> ENDWHILE
+
+<expression> ::= <term> | <expression> + <term> | <expression> - <term>
+<term> ::= <factor> | <term> * <factor> | <term> / <factor>
+<factor> ::= <identifier> | <number> | ( <expression> )
+
+<condition> ::= <expression> <relationaloperator> <expression>
+<relationaloperator> ::= < | > | = | <= | >= | <>
+
+<identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>
+<number> ::= <digit> | <number> <digit>
+<letter> ::= a|...|Z
+<digit> ::= 0|...|9

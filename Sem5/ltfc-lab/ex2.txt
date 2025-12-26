@@ -1,0 +1,13 @@
+BEGIN
+a := 12;
+b := 25;
+c := 7;
+max := a;
+IF b > max THEN
+    max := b
+ENDIF;
+IF c > max THEN
+    max := c
+ENDIF;
+PRINT(max)
+END

@@ -1,0 +1,14 @@
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.AssemblyInfoInputs.cache
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.AssemblyInfo.cs
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.csproj.CoreCompileInputs.cache
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/bin/Debug/net9.0/pdp_lab4_dotnet9
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/bin/Debug/net9.0/pdp_lab4_dotnet9.deps.json
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/bin/Debug/net9.0/pdp_lab4_dotnet9.runtimeconfig.json
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/bin/Debug/net9.0/pdp_lab4_dotnet9.dll
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/bin/Debug/net9.0/pdp_lab4_dotnet9.pdb
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.dll
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/refint/pdp_lab4_dotnet9.dll
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.pdb
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/pdp_lab4_dotnet9.genruntimeconfig.cache
+/Users/alexlsk/University/pdp-lab4/pdp_lab4_dotnet9/obj/Debug/net9.0/ref/pdp_lab4_dotnet9.dll

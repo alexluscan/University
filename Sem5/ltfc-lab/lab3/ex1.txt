@@ -1,0 +1,10 @@
+BEGIN
+N := 5;
+i := 1;
+sum := 0;
+WHILE i <= N DO
+    sum := sum + i;
+    i := i + 1
+ENDWHILE;
+PRINT(sum)
+END

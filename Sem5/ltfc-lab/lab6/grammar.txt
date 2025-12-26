@@ -1,0 +1,46 @@
+Grammar for mini-DSL:
+
+program        ::= stmt_list
+
+stmt_list      ::= stmt stmt_list
+                 | /* empty */
+
+stmt           ::= load_stmt
+                 | save_stmt
+                 | replace_stmt
+                 | print_stmt
+                 | delete_stmt
+                 | count_stmt
+                 | append_stmt
+                 | if_stmt
+                 | expr_stmt
+
+load_stmt      ::= LOAD STRING (INTO ID)?
+save_stmt      ::= SAVE STRING (INTO ID)?
+replace_stmt   ::= REPLACE STRING TO STRING
+print_stmt     ::= PRINT (STRING | ID)
+delete_stmt    ::= DELETE FROM ID (WHERE cond)?
+count_stmt     ::= COUNT FROM ID (WHERE cond)?
+append_stmt    ::= APPEND STRING INTO ID
+if_stmt        ::= IF cond THEN stmt_list ENDIF
+
+expr_stmt      ::= ID ASSIGN expr
+
+expr           ::= term
+                 | expr PLUS term
+
+term           ::= ID
+                 | NUMBER
+                 | STRING
+
+cond           ::= ID WHEREOP STRING
+                 | ID EQ NUMBER
+                 | ID NEQ NUMBER
+
+WHEREOP        ::= EQUALS | CONTAINS | STARTSWITH | ENDSWITH
+
+Tokens:
+LOAD SAVE REPLACE PRINT DELETE COUNT APPEND IF THEN ENDIF INTO TO FROM WHERE
+EQUALS CONTAINS STARTSWITH ENDSWITH
+ASSIGN (=) EQ (==) NEQ (!=) PLUS COMMA LPAREN RPAREN
+STRING ID NUMBER

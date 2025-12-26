@@ -1,0 +1,80 @@
+Requirement 1: FA or RG
+
+Finite Automaton (FA) for IDENTIFIER
+
+Alphabet (Σ):
+    Σ = {a, b, c, …, z, A, B, C, …, Z, 0, 1, 2, …, 9}
+
+States:
+    Q = {q0, q1}
+
+Start State:
+    q0
+
+Final States:
+    F = {q1}
+
+Transition Function (δ):
+    δ(q0, letter) = q1
+    δ(q1, letter) = q1
+    δ(q1, digit)  = q1
+
+Regular Expression:
+    [A-Za-z][A-Za-z0-9]*
+
+
+Finite Automaton (FA) for CONSTANT (NUMBER)
+
+Alphabet (Σ):
+    Σ = {0, 1, 2, …, 9}
+
+States:
+    Q = {q0, q1}
+
+Start State:
+    q0
+
+Final States:
+    F = {q1}
+
+Transition Function (δ):
+    δ(q0, digit) = q1
+    δ(q1, digit) = q1
+
+Regular Expression:
+    [0-9]+
+
+
+Equivalent Regular Grammar (RG) for IDENTIFIER
+
+Non-terminals:
+    S, A, L, D
+
+Terminals:
+    a–z, A–Z, 0–9
+
+Start Symbol:
+    S
+
+Productions:
+    S → L A
+    A → L A | D A | ε
+    L → a | b | … | z | A | B | … | Z
+    D → 0 | 1 | … | 9
+
+
+
+Equivalent Regular Grammar (RG) for CONSTANT (NUMBER)
+Non-terminals:
+    S, A, D
+
+Terminals:
+    0–9
+
+Start Symbol:
+    S
+
+Productions:
+    S → D A
+    A → D A | ε
+    D → 0 | 1 | … | 9

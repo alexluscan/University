@@ -1,0 +1,121 @@
+Documentation – Requirements R1, R2, R3
+======================================
+
+Project: LL(1) Parser Implementation
+Course: Formal Languages and Compiler Design
+Author: <your name>
+
+
+R1 – Sequence of Prompts
+----------------------------------------
+
+The interaction with the user follows a fixed and deterministic sequence
+of prompts:
+
+1. The program builds the grammar and initializes the parsing
+   table.
+
+2. The user is prompted to enter a sequence over the alphabet {a, b, c, d}.
+
+   Prompt:
+       Enter sequence over {a,b,c,d}:
+
+3. The user inputs a sequence, for example:
+       a a b
+
+4. The parsing algorithm is executed using the table-driven approach
+   with input and working stacks.
+
+5. If the sequence is accepted, the program outputs ONLY the sequence of
+   production numbers applied during parsing, in order.
+
+   Example output:
+       1 3 3 4
+
+6. If the sequence is invalid, a syntax error is reported and the sequence
+   is rejected.
+
+This requirement demonstrates correct stack behavior and production
+selection on a simple grammar.
+
+
+R2 – Mini DSL: Validation Process and Bug Report
+------------------------------------------------
+
+Requirement R2 validates the LL(1) parser on the mini DSL grammar using input
+tokens provided via a PIF (Program Internal Form) file.
+
+Validation process:
+
+1. Grammar validation
+   - FIRST sets are computed for all nonterminals.
+   - FOLLOW sets are computed starting from the start symbol.
+   - An LL(1) parsing table is constructed based on FIRST and FOLLOW.
+   - During table construction, runtime checks detect LL(1) conflicts.
+   - If a conflict occurs, execution stops and an error is reported.
+
+2. Input validation
+   - Each token read from the PIF file is checked against the grammar terminals.
+   - Unknown tokens are reported as errors before parsing begins.
+
+3. Parsing validation
+   - For each parsing step, the table entry M[X, a] is consulted.
+   - If the entry is empty, a syntax error is reported.
+   - Valid inputs produce:
+       a) production sequence
+       b) leftmost derivation
+       c) parse tree (father–sibling representation)
+
+Bug report (identified and fixed):
+
+- Issue:
+  The initial implementation used a 64-bit bitset for FIRST and FOLLOW sets,
+  while the maximum number of symbols was 128. This caused undefined behavior
+  for grammars with many terminals.
+
+- Fix:
+  The bitset implementation was replaced with a multi-word bitset structure,
+  ensuring correct FIRST and FOLLOW computation for all symbols.
+
+This validation confirms the correctness, robustness, and safety of the LL(1)
+parser implementation.
+
+
+R3 – Differences Between LL(1) Parser and YACC / ANTLR
+------------------------------------------------------
+
+Requirement R3 compares the implemented LL(1) parser with parser generators
+such as YACC and ANTLR.
+
+Key differences:
+
+1. Parser construction
+   - LL(1) parser: manually implemented, with explicit FIRST/FOLLOW computation
+     and parsing table construction.
+   - YACC/ANTLR: parser is generated automatically from a declarative grammar.
+
+2. Parsing strategy
+   - LL(1) parser: top-down, predictive parsing with one-symbol lookahead.
+   - YACC: bottom-up LR parsing.
+   - ANTLR: adaptive top-down LL(*) parsing.
+
+3. Grammar constraints
+   - LL(1): does not allow left recursion and requires disjoint FIRST sets.
+   - YACC: allows left recursion and more general grammars.
+   - ANTLR: supports extended LL grammars.
+
+4. Validation and error handling
+   - LL(1) parser: explicitly checks parsing table entries and reports errors
+     based on table lookups.
+   - YACC/ANTLR: detect conflicts at generation time and report syntax errors
+     during parsing.
+
+5. Experimental comparison
+   - The same mini DSL grammar was implemented in YACC/ANTLR.
+   - Identical input sequences were tested.
+   - Both the LL(1) parser and the generator-based parsers accepted valid inputs
+     and rejected invalid ones.
+
+This comparison confirms that, despite different parsing strategies and
+implementations, the LL(1) parser recognizes the same language as YACC and
+ANTLR, validating its correctness.

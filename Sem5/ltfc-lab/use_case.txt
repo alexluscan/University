@@ -1,0 +1,62 @@
+Use Case Documentation - Math computation
+
+
+Statements:
+
+1) Assignment
+   Rule: <assignment> ::= <identifier> := <expression>
+   Why: Store intermediate results.
+   EX:
+     x := 3 + 4 * 2
+
+2) Print
+   Rule: <printstmt> ::= PRINT ( <expression> )
+   Why: Output results.
+   EX:
+     PRINT(x)
+
+3) If
+   Rule: <ifstmt> ::= IF <condition> THEN <stmtList> ENDIF
+   Why: Conditional execution based on computed values.
+   EX:
+     IF x > 10 THEN
+         PRINT(x)
+     ENDIF
+
+4) While
+   Rule: <whilestmt> ::= WHILE <condition> DO <stmtList> ENDWHILE
+   Why: Repeat computations until a stop condition.
+   EX:
+     WHILE x < 100 DO
+         x := x * 2;
+     ENDWHILE
+
+5) Expressions
+   Rule: <expression> ::= <term> | <expression> + <term> | <expression> - <term>
+   Why: Compose computations from vars and numbers.
+   EX:
+     y := (x + 5) * 2
+
+
+
+
+
+
+
+Sample program:
+BEGIN
+    x := 1;
+    WHILE x < 10 DO
+        y := x * x;
+        IF y > 20 THEN
+            PRINT(y)
+        ENDIF;
+        x := x + 1;
+    ENDWHILE
+END
+
+Shows:
+- Assignments build state (x, y)
+- Expressions
+- If filters results
+- While iterates a computation loop
